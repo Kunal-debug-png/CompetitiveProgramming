@@ -1,0 +1,24 @@
+This bubble sort algorithm is efficient bubble sort algorithm by just defining a single swapped variable of type boolean. which determines if the array is sorted in two passes then we dont need to make a third pass happen we will just make swapped variable true if the swap happens otherwise if will keep on going for the next iterations : 
+In the best case we can make bubble sort to sort array in O(n) by using this simple variable.
+code :
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+         bool swapped;
+        for (int i = 0; i < nums.size() - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < nums.size() - i - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    std::swap(nums[j], nums[j + 1]);
+                    swapped = true;
+                }
+            }
+            
+            if (!swapped) {
+                break;
+            }
+        }
+        
+    }
+};
